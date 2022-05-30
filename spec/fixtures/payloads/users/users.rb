@@ -24,3 +24,23 @@ def create_user
     }
   }
 end
+
+def create_invalid_payload
+  {
+    names: Faker::Name.name,
+    usernames: SecureRandom.alphanumeric(6),
+    emails: Faker::Internet.email,
+    address: {
+      street: Faker::Address.street_name,
+      suite: 'unknown',
+      city: Faker::Address.city,
+      zipcodes: Faker::Address.postcode,
+      geo: {
+        lat: Faker::Address.latitude,
+        lng: Faker::Address.longitude,
+      }
+    },
+    phone_number: Faker::PhoneNumber.phone_number,
+    url: Faker::Internet.url
+  }
+end
