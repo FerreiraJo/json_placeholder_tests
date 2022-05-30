@@ -19,6 +19,7 @@ RSpec.configure do |config|
       include HTTParty
       base_uri 'https://jsonplaceholder.typicode.com/'
     end
+    require_relative './fixtures/payloads/users/users'
   end
 
   RSpec::Matchers.define :match_response_schema do |schema|
